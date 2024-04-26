@@ -1,4 +1,7 @@
 # Reproducing the bug
+https://github.com/openlayers/openlayers/issues/15777
+
+
 1. run `pnpm i` (or use npm if u want)
 2. `npm start` and visit http://localhost:4200/
 ![alt text](docs/zoomedout.png)
