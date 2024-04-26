@@ -1,27 +1,14 @@
-# NgOpenlayersCanvasBug
+# Reproducing the bug
+1. run pnpm i
+2. ng serve
+![alt text](docs/zoomedout.png)
+3. zoom in on the map so that the vectors come close to the left or right side of the canvas.
+4. Make sure to be 90 degrees rotated for it to happend.
+![alt text](docs/zoomedclipped.png)
+![alt text](docs/zoomedwithcanvaselement.png)
+5. The canvas appears to both have wrong css tranformation, and also width and length.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+6. This only happends with openlayers 9, and not with 8.2.0.
+7. Run pnpm i ol@8.2.0 to see that the bug is not there.
+![alt text](<docs/no bug in 8.2.0 - 2.png>)
+![alt text](<docs/no bug in 8.2.0.png>)
